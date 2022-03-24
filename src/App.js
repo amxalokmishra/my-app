@@ -38,16 +38,17 @@ function App() {
   }
   return (
     <>
-    <Router>
+    {/* <Router> */}
      <Navbar title=" AMx Text" mode={mode} toggle={toggle}/>
      <Alert alert={alert}/>
-     <div className="container">
+     <TextForm setAlert={setAlert} heading="Enter the text" mode={mode}/>
+     {/* <div className="container">
        <Routes>
-         <Route path="/" element={<TextForm setAlert={setAlert} heading="Enter the text" mode={mode}/>}/>
+         <Route path="/" element={}/>
          <Route path="/about" element={<About/>} />
        </Routes>
       </div>
-      </Router>
+      </Router> */}
     </>
   );
 }
