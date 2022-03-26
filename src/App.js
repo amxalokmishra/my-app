@@ -12,7 +12,7 @@ import {
   Link
 } from 'react-router-dom';
 function App() {
-  const[mode,setMode]=useState('dark');
+  const[mode,setMode]=useState('light');
   const [alert, setalert] = useState(null);
   const setAlert=(message,type)=>{
     setalert({
@@ -38,17 +38,16 @@ function App() {
   }
   return (
     <>
-    {/* <Router> */}
+    <Router>
      <Navbar title=" AMx Text" mode={mode} toggle={toggle}/>
      <Alert alert={alert}/>
-     <TextForm setAlert={setAlert} heading="Enter the text" mode={mode}/>
-     {/* <div className="container">
+     <div className="container">
        <Routes>
-         <Route path="/" element={}/>
-         <Route path="/about" element={<About/>} />
+         <Route path="/" element={<TextForm setAlert={setAlert} heading="Enter the text" mode={mode}/>}/>
+         <Route path="/about" element={<About mode={mode}/>} />
        </Routes>
       </div>
-      </Router> */}
+      </Router>
     </>
   );
 }
